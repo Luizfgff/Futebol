@@ -1,0 +1,152 @@
+/* =========================================
+   DESIGN SYSTEM (VARIÁVEIS)
+   ========================================= */
+:root {
+  /* Cores */
+  --primary: #2d5a27;    /* Verde Campo */
+  --secondary: #f4b400;  /* Amarelo Bola */
+  --text: #1a1a1a;
+  --bg: #ffffff;
+  --surface: #f4f4f4;
+  
+  /* Espaçamentos e Bordas */
+  --gap: 20px;
+  --radius: 12px;
+  --shadow: 0 4px 20px rgba(0,0,0,0.1);
+  
+  /* Transições */
+  --transition: all 0.3s ease;
+}
+
+/* =========================================
+   RESET E CONFIGURAÇÕES GLOBAIS
+   ========================================= */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 16px; /* Base para o controle de fonte */
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  color: var(--text);
+  background-color: var(--bg);
+  line-height: 1.6;
+  transition: var(--transition);
+}
+
+.container {
+  width: min(1200px, 90%);
+  margin: 0 auto;
+}
+
+/* =========================================
+   ALTO CONTRASTE (Acessibilidade)
+   ========================================= */
+body.high-contrast {
+  --primary: #ffff00;
+  --secondary: #ffffff;
+  --text: #ffffff;
+  --bg: #000000;
+  --surface: #222222;
+}
+
+/* =========================================
+   LAYOUT (Mobile-First)
+   ========================================= */
+.header {
+  background: var(--primary);
+  color: white;
+  padding: 1rem 0;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+.header-inner {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.nav-list {
+  display: flex;
+  gap: 1.5rem;
+  list-style: none;
+}
+
+/* Grid de Jogadores */
+.grid-players {
+  display: grid;
+  gap: var(--gap);
+  /* Mobile: 1 coluna | Desktop: Alterado via Media Query abaixo */
+  grid-template-columns: 1fr;
+  margin-top: 2rem;
+}
+
+/* =========================================
+   COMPONENTES
+   ========================================= */
+.card {
+  background: var(--surface);
+  padding: 1.5rem;
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  border: 2px solid transparent;
+}
+
+.card:hover {
+  border-color: var(--secondary);
+}
+
+.accessibility-bar {
+  position: fixed;
+  left: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  z-index: 1000;
+}
+
+.accessibility-bar button {
+  width: 45px;
+  height: 45px;
+  border-radius: 50%;
+  border: none;
+  background: var(--primary);
+  color: white;
+  cursor: pointer;
+  font-weight: bold;
+  box-shadow: var(--shadow);
+}
+
+/* =========================================
+   ANIMAÇÕES (Scroll Reveal)
+   ========================================= */
+.reveal {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.8s ease, transform 0.8s ease;
+}
+
+.reveal.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* =========================================
+   MEDIA QUERIES (Desktop)
+   ========================================= */
+@media (min-width: 768px) {
+  .grid-players {
+    /* Edite aqui para mudar as colunas no Desktop */
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
