@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Futebol Pro | Experiência Acessível</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <nav class="accessibility-bar" aria-label="Controles de Acessibilidade">
+    <button onclick="increaseFont()" aria-label="Aumentar fonte">A+</button>
+    <button onclick="decreaseFont()" aria-label="Diminuir fonte">A-</button>
+    <button onclick="toggleContrast()" aria-label="Alternar Alto Contraste">
+      <span class="icon">🌓</span>
+    </button>
+  </nav>
+
+  <header class="header">
+    <div class="container header-inner">
+      <div class="logo">⚽ ArenaTech</div>
+      <nav class="nav" aria-label="Navegação Principal">
+        <ul class="nav-list">
+          <li><a href="#historia">História</a></li>
+          <li><a href="#jogadores">Craques</a></li>
+          <li><a href="#faq">Dúvidas</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero reveal">
+      <div class="container">
+        <h1>O Futebol Além das Quatro Linhas</h1>
+        <p>Uma jornada tecnológica e histórica pelo esporte mais popular do mundo.</p>
+        <a href="#jogadores" class="btn-primary">Ver Destaques</a>
+      </div>
+    </section>
+
+    <section id="historia" class="section reveal" aria-labelledby="carousel-title">
+      <div class="container">
+        <h2 id="carousel-title">Momentos Históricos</h2>
+        <div class="carousel" id="main-carousel" role="region" aria-roledescription="carrossel">
+          <div class="carousel-container" id="carousel-track">
+            </div>
+          <div class="carousel-controls">
+            <button class="prev" aria-label="Slide anterior">❮</button>
+            <button class="next" aria-label="Próximo slide">❯</button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="jogadores" class="section reveal">
+      <div class="container">
+        <h2>Grandes Lendas</h2>
+        <div class="grid-players" id="players-grid">
+          </div>
+      </div>
+    </section>
+
+    <section id="faq" class="section reveal">
+      <div class="container">
+        <h2>Curiosidades do Esporte</h2>
+        <div class="accordion" id="faq-accordion">
+          </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container">
+      <p>&copy; 2024 ArenaTech. Desenvolvido com foco em acessibilidade.</p>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
